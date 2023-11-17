@@ -7,8 +7,12 @@ export class RoupasLista{
         return this.roupas;
     }
 
-    getRoupas(id){
+    getRoupa(id){
         return this.roupas.find((roupa)=> roupa.id==id );
+    }
+    
+    getRoupaPeloTipo(tipo){
+        return this.roupas.filter((roupa) => roupa.tipo == tipo);
     }
 
     addRoupas(roupa){
