@@ -7,13 +7,21 @@ export class RoupasLista{
         return this.roupas;
     }
 
-    getRoupa(id){
+    getRoupas(id){
         return this.roupas.find((roupa)=> roupa.id==id );
     }
     
     getRoupaPeloTipo(tipo){
         return this.roupas.filter((roupa) => roupa.tipo == tipo);
     }
+    getRoupaPelaCor(cor){
+        return this.roupas.filter((roupa) => roupa.cor == cor);
+    }
+    getRoupaPelaTamTipo(tam,tipo){
+        let listEscolhido=this.getRoupaPeloTipo(tipo);
+        return listEscolhido.filter((roupa)=>roupa.tam==tam)
+    }
+
 
     addRoupas(roupa){
         this.roupas.push(roupa);
